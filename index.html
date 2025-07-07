@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hope Foundation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdfdfd;
+      color: #222;
+    }
+
+    header {
+      background: #00796b;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: url('https://source.unsplash.com/1600x600/?help,children') no-repeat center;
+      background-size: cover;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    section {
+      padding: 60px 40px;
+    }
+
+    .about,
+    .work {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .donate {
+      text-align: center;
+      background-color: #e0f2f1;
+      padding: 50px;
+      border-radius: 10px;
+    }
+
+    .donate button {
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #004d40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header, section {
+        padding: 20px;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Hope Foundation</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Our Work</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Empowering Lives, Building Futures</h2>
+</div>
+
+<section id="about" class="about">
+  <h2>About Us</h2>
+  <p>
+    Hope Foundation is a non-profit organization committed to transforming lives through education, healthcare, and community empowerment. We believe every individual deserves the chance to live with dignity, opportunity, and hope.
+  </p>
+</section>
+
+<section id="work" class="work">
+  <h2>Our Work</h2>
+  <ul>
+    <li>📚 Free education programs for underprivileged children</li>
+    <li>🏥 Medical camps and health awareness</li>
+    <li>💼 Women empowerment and vocational training</li>
+    <li>🌿 Sustainability and environmental awareness campaigns</li>
+  </ul>
+</section>
+
+<section id="donate" class="donate">
+  <h2>Support Our Mission</h2>
+  <p>Your contribution can change a life. Help us reach more communities in need.</p>
+  <button onclick="alert('Redirecting to payment...')">Donate Now</button>
+</section>
+
+<footer id="contact">
+  <p>📍 123 NGO Street, City Name, Country</p>
+  <p>📧 contact@hopefoundation.org | 📞 +91-9876543210</p>
+  <p>&copy; 2025 Hope Foundation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
