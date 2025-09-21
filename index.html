@@ -1,14 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShreeJee Parivar Trust</title>
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-    header { background: #f5f5f5; text-align: center; padding: 20px; }
-    header img { max-height: 80px; }
-    nav { background: #006400; padding: 10px; text-align: center; }
+    /* Carousel container */
+.carousel {
+   width: 70%;
+   height: 70%; /* fixed height */
+   border-radius: 12px;
+margin: 10px auto;
+justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#donate img {
+  width: 400px;      /* adjust width as needed */
+  height: 500px;      /* maintain aspect ratio */
+  display: block;    /* remove inline spacing */
+  margin: 20px auto; /* center image horizontally with spacing */
+  border-radius: 8px; /* optional rounded corners */
+}
+
+ 
+/* Slides */
+.carousel img {
+  width: 100%;
+  height: 100%;
+
+ 
+  object-fit: cover;   
+    display: none;         /* hide by default */
+  border-radius: 12px;
+ }
+    /* Show first image */
+    .carousel img.active {
+      display: block;
+    }
+
+    /* Dots navigation */
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      display: inline-block;
+      border-radius: 50%;
+      background-color: #bbb;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #333;
+    }
+.section {
+  height: 100vh;       /* 100% of viewport height */
+  width: 100%;         /* full width */
+  overflow: hidden;    /* hide anything spilling out */
+   justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  padding: 20px;       /* optional padding inside */
+  box-sizing: border-box;
+ scroll-snap-align: start;
+}
+
+header {
+  display: flex;
+  justify-content: center;  /* centers the header-content horizontally */
+   background-color: #f5f5f5;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;      /* vertical align text & logo */
+  gap: 15px;                /* distance between text and logo */
+  width: max-content;       /* shrink to fit content so it centers correctly */
+}
+
+.header-logo {
+  width: 200px; 
+  height: 200px;
+}
+    body {   
+  scroll-snap-type: y mandatory;
+ scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    header { background: #ffffff; text-align: center; }
+     nav { background: #006400; padding: 10px; text-align: center; }
     nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
     .section { padding: 30px; text-align: center; }
@@ -21,13 +104,19 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <img src="assets/images/b.jpg" alt="ShreeJee Parivar Trust Logo">
-    <h1>ShreeJee Parivar Trust</h1>
-    <p>"Serving with love, growing with faith"</p>
-  </header>
 
+
+
+  <!-- Header -->
+<header>
+    <img src="assets/images/logo1.jpg" alt="Trust Logo" class="header-logo">
+  <div class="header-content">
+    <div class="header-text">
+      <h1>ShreeJee Parivar Trust</h1>
+      <p>"Serving with love, growing with faith"</p>
+    </div>
+  </div>
+</header>
   <!-- Navigation -->
   <nav>
     <a href="#home">Home</a>
@@ -36,6 +125,54 @@
     <a href="#campaigns">Campaigns</a>
     <a href="#services">Services</a>
   </nav>
+
+  <div class="carousel">
+    <img src="assets/images/sj_Bannera1.jpg" class="active">
+    <img src="assets/images/sj_Banner2.jpg">
+    <img src="assets/images/sj_Banner3.jpg">
+    <img src="assets/images/sj_Banner4.jpg">
+     <img src="assets/images/certificate1.jpg">
+
+  </div>
+
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+ 
+  </div>
+
+  <script>
+    let index = 0;
+    const slides = document.querySelectorAll('.carousel img');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === n);
+        dots[i].classList.toggle('active', i === n);
+      });
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
+
+    // Auto slide every 3s
+    setInterval(nextSlide, 4500);
+
+    // Dot click navigation
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        index = i;
+        showSlide(index);
+      });
+    });
+  </script>
+
 
   <!-- About Section -->
   <section id="about" class="section">
@@ -68,7 +205,7 @@
         <p>Empowering women trustees and volunteers to lead initiatives.</p>
       </div>
       <div class="campaign">
-        <h3>Yoga & Spirituality</h3>
+        <h3>Yoga &amp; Spirituality</h3>
         <p>Promoting Yoga, meditation, and spiritual events for inner growth.</p>
       </div>
     </div>
@@ -79,7 +216,7 @@
     <h2>Support Us</h2>
     <p>Bank: State Bank of India, Chail Branch</p>
     <p>A/c no: 43353183254 | IFSC: SBIN0050120</p>
-    <img src="qr-code.png" alt="Donation QR Code">
+    <img src="assets/images/donation1.jpg" alt="Donation QR Code">
     <p>Donors receive a certificate of donation. Every contribution helps us serve GauMata and humanity.</p>
   </section>
 
@@ -93,8 +230,9 @@
       <a href="https://www.instagram.com/shrijiparivar_trust/" style="color:white;">Instagram</a> | 
       <a href="https://youtube.com/@shrijiparivarchail" style="color:white;">YouTube</a>
     </p>
-    <p>&copy; 2025 ShreeJee Parivar Trust. All Rights Reserved.</p>
+    <p>© 2025 ShreeJee Parivar Trust. All Rights Reserved.</p>
   </footer>
 
-</body>
-</html>
+
+
+</body></html>
