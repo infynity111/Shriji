@@ -1,178 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shree Jee Parivaar Trust</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShreeJee Parivar Trust</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fdfdfd;
-      color: #222;
-    }
-
-    header {
-      background: #00796b;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-    }
-
-    .hero {
-      background: url('https://source.unsplash.com/1600x600/?help,children') no-repeat center;
-      background-size: cover;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 3rem;
-      background-color: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    section {
-      padding: 60px 40px;
-    }
-
-    .about,
-    .work {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .donate {
-      text-align: center;
-      background-color: #e0f2f1;
-      padding: 50px;
-      border-radius: 10px;
-    }
-
-    .donate button {
-      background: #00796b;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 5px;
-      margin-top: 20px;
-    }
-
-    footer {
-      background: #004d40;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      header, section {
-        padding: 20px;
-      }
-      .hero h2 {
-        font-size: 2rem;
-      }
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    header { background: #f5f5f5; text-align: center; padding: 20px; }
+    header img { max-height: 80px; }
+    nav { background: #006400; padding: 10px; text-align: center; }
+    nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .section { padding: 30px; text-align: center; }
+    .section h2 { color: #006400; margin-bottom: 15px; }
+    .campaigns { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .campaign { background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    footer { background: #333; color: #fff; text-align: center; padding: 20px; }
+    footer img { max-width: 150px; margin: 10px auto; display: block; }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Shree Jee Parivaar Trust</h1>
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="ShreeJee Parivar Trust Logo">
+    <h1>ShreeJee Parivar Trust</h1>
+    <p>"Serving with love, growing with faith"</p>
+  </header>
+
+  <!-- Navigation -->
   <nav>
-    <a href="#">Home</a>
+    <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#work">Our Work</a>
     <a href="#donate">Donate</a>
-    <a href="#contact">Contact</a>
+    <a href="#campaigns">Campaigns</a>
+    <a href="#services">Services</a>
   </nav>
-</header>
 
-<div class="hero">
-  <h2>Empowering Lives, Building Futures</h2>
-</div>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>ShreeJee Parivar Trust, established in 2024 in Chail (Himachal Pradesh), is a spiritual and charitable organization inspired by Goddess Radha. The Trust serves GauMata, empowers girls, provides healthcare, and works for the environment.</p>
+  </section>
 
-<section id="about" class="about">
-  <h2>About Us</h2>
-  <p>
-Shriji Parivar Trust, established in 2024 in the serene hills of Chail, District Solan (Himachal Pradesh), is a spiritual and charitable organization inspired by the divine grace of Goddess Radha (Shriji). The trust is committed to the service of GauMata, the underprivileged, and the environment, guided by the values of Sanatan Dharma, selfless service (seva), and community upliftment.
-  </p>
-</section>
+  <!-- Campaigns Section -->
+  <section id="campaigns" class="section">
+    <h2>Our Key Campaigns</h2>
+    <div class="campaigns">
+      <div class="campaign">
+        <h3>Gau Sewa</h3>
+        <p>Rescue, nourishment, and shelter of abandoned cows through Shriji Gaushala.</p>
+      </div>
+      <div class="campaign">
+        <h3>Girl Education</h3>
+        <p>“Shriji ki Betiya” campaign empowers rural girls with education and dignity.</p>
+      </div>
+      <div class="campaign">
+        <h3>Health Camps</h3>
+        <p>Free medical camps providing healthcare to underprivileged communities.</p>
+      </div>
+      <div class="campaign">
+        <h3>Environment</h3>
+        <p>“Ek Ped Aane Wale Ke Naam” – tree plantation and jungle cleanliness drives.</p>
+      </div>
+      <div class="campaign">
+        <h3>Women Empowerment</h3>
+        <p>Empowering women trustees and volunteers to lead initiatives.</p>
+      </div>
+      <div class="campaign">
+        <h3>Yoga & Spirituality</h3>
+        <p>Promoting Yoga, meditation, and spiritual events for inner growth.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="work" class="work">
-  <h2>Our Work</h2>
-  <p>Gau Sewa: Rescue, nourishment, and shelter of abandoned cows through Shriji Gaushala, under the campaign "Gau Sewa Se Rashtra Sewa".</p>
+  <!-- Donation Section -->
+  <section id="donate" class="section">
+    <h2>Support Us</h2>
+    <p>Bank: State Bank of India, Chail Branch</p>
+    <p>A/c no: 43353183254 | IFSC: SBIN0050120</p>
+    <img src="qr-code.png" alt="Donation QR Code">
+    <p>Donors receive a certificate of donation. Every contribution helps us serve GauMata and humanity.</p>
+  </section>
 
-      <ul>
-    <li>📚 Spiritual Awareness: Inner awakening and soul connection through the campaign “Love for Self”, promoting dhyana, satsang, and self-realization.</li>
-    <li>🏥 Medical camps and health awareness</li>
-    <li>💼 Environment: Tree plantation and jungle cleanliness drives under “Ek Ped Aane Wale Ke Naam”, securing a green future for coming generations.</li>
-    <li>🌿Girl Education: Empowering rural girls through the “Shriji ki Betiya” campaign, supporting education and self-growth.</li>
-        <li> Social Welfare: Serving the poor, supporting rural communities, and organizing health and awareness camps.</li>
-  </ul>
-
-  
-</section>
-<section id="priniciple" class="🤝 Our Principles">
-  <h2>🤝 Our Principles</h2>
+  <!-- Footer -->
+  <footer>
+    <h3>Contact Us</h3>
+    <p>The Samihan, Shriji Niwas, Chail, Distt. Solan HP 173217 Bharat</p>
+    <p>📞 +91 78078-18058 | ✉ shrijiparivarchail@gmail.com</p>
     <p>
-Seva over Salary: All trustees serve voluntarily, with no personal gain or salary.
-Community First: Working at the grassroots level with local and global supporters.
-Partnership & Learning: Collaborative approach with individuals, organizations, and volunteers.
-Faith & Service: Every activity is an offering of love and devotion to Shriji and the divine creation.
-  </p>
-<p>“Shriji Parivar Trust – Serving with love, growing with faith.”           Join us in building a compassionate, conscious, and self-reliant Bharat.</p>
-</section>
-
-<section id="donate" class="donate">
-  <h2>Support Our Mission</h2>
-  <p>Your contribution can change a life. Help us reach more communities in need.</p>
-  <button onclick="alert('Redirecting to payment...')">Donate Now</button>
-</section>
-
-<footer id="contact">
-     <h3>Contact Us</h3>
-  <p>📍The Samihan, Shriji Niwas, Chail
-Distt. Solan HP 173217 Bharat. 
-</p>
-  <p>📧 shrijiparivarchail@gmail.com</p>
-   <p>📞 +91 78078-18058</p>
-  <p>&copy; 2025 ShreeJeeParivaaarTrust. All rights reserved.</p>
-
-  <!-- Social Media Icons -->
-  <div style="margin-top: 20px;">
-    <a href="https://www.facebook.com/share/16i9UwxqCb/" target="_blank" style="margin: 0 10px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" width="30" height="30">
-    </a>
-    <a href="https://www.instagram.com/shrijiparivar_trust/profilecard/?igsh=MThuaDE4Mnc3Ym8zaQ==" target="_blank" style="margin: 0 10px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" height="30">
-    </a>
-    <a href="https://www.facebook.com/share/16i9UwxqCb/" target="_blank" style="margin: 0 10px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook" width="30" height="30">
-    </a>
-  </div>
-
-</footer>
+      <a href="https://www.facebook.com/share/16i9UwxqCb/" style="color:white;">Facebook</a> | 
+      <a href="https://www.instagram.com/shrijiparivar_trust/" style="color:white;">Instagram</a> | 
+      <a href="https://youtube.com/@shrijiparivarchail" style="color:white;">YouTube</a>
+    </p>
+    <p>&copy; 2025 ShreeJee Parivar Trust. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
