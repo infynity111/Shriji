@@ -13,7 +13,38 @@ margin: 10px auto;
 justify-content: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  background: #f9f9f9;
+}
 
+.home-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  gap: 40px;
+}
+
+/* LEFT */
+.home-left {
+  flex: 1;
+  text-align: center;
+}
+
+.home-left img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* RIGHT */
+.home-right {
+  flex: 1;
+}
 #donate img {
   width: 400px;      /* adjust width as needed */
   height: 500px;      /* maintain aspect ratio */
