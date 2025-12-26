@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shriji Parivar Trust | Serving with Love, Growing with Faith</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Hind+Siliguri:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --green: #2e7d32;
+            --gold: #c8a415;
+            --light: #f9f7f0;
+            --dark: #3e2723;
+            --accent: #e65100;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Hind Siliguri', sans-serif; background:#fff; color:#333; line-height:1.7; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color:var(--dark); }
+        .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+        
+        /* Carousel Header */
+        header {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            overflow: hidden;
+            color: #fff;
+            text-align: center;
+        }
+        .carousel {
+            position: absolute;
+            inset: 0;
+            display: flex;
+        }
+        .slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+        .slide.active { opacity: 1; }
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.45));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        .logo { font-size:3.5rem; font-weight:700; color:var(--gold); margin-bottom:15px; }
+        .sanskrit { font-size:3rem; color:var(--gold); margin:30px 0; }
+        
+        /* Sections */
+        section { padding:100px 0; }
+        .bg-light { background:var(--light); }
+        .section-title {
+            text-align:center;
+            margin-bottom:60px;
+            font-size:2.8rem;
+            color:var(--green);
+            position:relative;
+        }
+        .section-title::after {
+            content:'';
+            width:100px;
+            height:3px;
+            background:var(--gold);
+            position:absolute;
+            bottom:-15px;
+            left:50%;
+            transform:translateX(-50%);
+        }
+        .section-title span { color:var(--gold); }
+        
+        /* Initiative Cards */
+        .initiatives-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+            gap:40px;
+        }
+        .initiative-card {
+            background:#fff;
+            border-radius:20px;
+            overflow:hidden;
+            box-shadow:0 15px 40px rgba(0,0,0,0.1);
+            transition:0.4s;
+            position:relative;
+        }
+        .initiative-card:hover { transform:translateY(-15px); box-shadow:0 25px 60px rgba(0,0,0,0.15); }
+        .card-img {
+            height:220px;
+            background-size:cover;
+            background-position:center;
+            position:relative;
+        }
+        .card-img::after {
+            content:'';
+            position:absolute;
+            inset:0;
+            background:linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+        }
+        .card-content { padding:30px; }
+        .card-icon { font-size:2.8rem; color:var(--green); margin-bottom:15px; }
+        .card-title { font-size:1.8rem; margin-bottom:15px; color:var(--dark); }
+        
+        /* Trustees */
+        .trustees-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:30px;
+        }
+        .trustee-card {
+            background:var(--light);
+            border-radius:15px;
+            padding:30px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+        .trustee-card:hover { transform:translateY(-10px); }
+        .trustee-img {
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            background:#ccc;
+            margin:0 auto 20px;
+            background-size:cover;
+        }
+        
+        /* Donation */
+        .donate-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:40px; margin-top:50px; }
+        .qr-box, .bank-details {
+            background:#fff;
+            padding:35px;
+            border-radius:20px;
+            box-shadow:0 15px 40px rgba(0,0,0,0.1);
+            text-align:center;
+        }
+        .qr-box img { max-width:280px; border:5px solid var(--gold); border-radius:15px; }
+        .btn {
+            display:inline-block;
+            background:var(--gold);
+            color:#fff;
+            padding:14px 40px;
+            border-radius:50px;
+            text-decoration:none;
+            font-weight:600;
+            margin-top:20px;
+            transition:0.3s;
+        }
+        .btn:hover { background:var(--green); transform:scale(1.05); }
+        
+        /* Footer */
+        footer { background:var(--dark); color:#fff; text-align:center; padding:60px 20px; }
+        .social a { color:#fff; font-size:1.8rem; margin:0 15px; }
+        
+        @media(max-width:768px) {
+            header { height:70vh; min-height:500px; }
+            .logo { font-size:2.5rem; }
+            .sanskrit { font-size:2.2rem; }
+            .section-title { font-size:2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Carousel -->
+    <header>
+        <div class="carousel">
+            <div class="slide active" style="background-image: url('https://raw.githubusercontent.com/infynity111/Shriji/refs/heads/main/assets/images/sj_Banner2.jpg');"></div>
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/infynity111/Shriji/refs/heads/main/assets/images/sj_Banner3.jpg');"></div>
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/infynity111/Shriji/refs/heads/main/assets/images/sj_Bannera1.jpg');"></div>
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/infynity111/Shriji/refs/heads/main/assets/images/sj_banner1.jpg');"></div>
+            <div class="slide" style="background-image: url('https://raw.githubusercontent.com/infynity111/Shriji/refs/heads/main/assets/images/sj_Banner4.jpg');"></div>
+        </div>
+        <div class="overlay">
+            <div class="container header-content">
+                <div class="logo">Shriji Parivar Trust</div>
+                <div class="sanskrit">उत्तिष्ठत जाग्रत प्राप्य वरान्निबोधत</div>
+                <p style="font-size:1.5rem; font-style:italic; margin:20px 0;">Arise! Awake! Approach the great and learn the Truth.</p>
+                <p style="font-size:1.3rem;">Established on Radhaashtami, 11th September 2024 | Chail, Himachal Pradesh</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title">About <span>Shriji Parivar Trust</span></h2>
+            <p style="text-align:center; max-width:900px; margin:0 auto 40px; font-size:1.2rem;">
+                Inspired by the divine grace of Goddess Radha (Shriji), we serve GauMata, the underprivileged, and the environment through selfless seva, rooted in Sanatan Dharma.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Work – Initiatives -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Our <span>Work</span></h2>
+            <div class="initiatives-grid">
+                <!-- Gau Sewa -->
+                <div class="initiative-card">
+                    <div class="card-img" style="background-image: url('https://content.jdmagicbox.com/v2/comp/jamnagar/j6/0288px288.x288.221120223828.x7j6/catalogue/shri-krishna-pranami-gaushala-jamnagar-cowshed-u9hmttOpPe.jpg');"></div>
+                    <div class="card-content">
+                        <i class="fas fa-cow card-icon"></i>
+                        <h3 class="card-title">Gau Sewa – Shriji Gaushala</h3>
+                        <p>Rescuing and nurturing abandoned cows with love and reverence. A sanctuary of care, feeding, medical aid, and spiritual devotion.</p>
+                    </div>
+                </div>
+
+                <!-- Health -->
+                <div class="initiative-card">
+                    <div class="card-img" style="background-image: url('https://thumbs.dreamstime.com/z/free-medical-camp-rural-area-india-217943738.jpg');"></div>
+                    <div class="card-content">
+                        <i class="fas fa-stethoscope card-icon"></i>
+                        <h3 class="card-title">Health – Free Medical Camps</h3>
+                        <p>Bringing free check-ups, medicines, and awareness to rural and underserved communities. Health is a basic right.</p>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="initiative-card">
+                    <div class="card-img" style="background-image: url('https://asf.org.in/wp-content/uploads/2022/03/smaller_lead_photo_1000x.webp');"></div>
+                    <div class="card-content">
+                        <i class="fas fa-graduation-cap card-icon"></i>
+                        <h3 class="card-title">Education – Shriji ki Betiya</h3>
+                        <p>Supporting girl cadets with fees, stationery, and motivation — empowering the next generation.</p>
+                    </div>
+                </div>
+
+                <!-- Women Empowerment -->
+                <div class="initiative-card">
+                    <div class="card-img" style="background-image: url('https://www.casa-india.org/blog/wp-content/uploads/2022/10/women-empowerment.jpg');"></div>
+                    <div class="card-content">
+                        <i class="fas fa-female card-icon"></i>
+                        <h3 class="card-title">Women Empowerment</h3>
+                        <p>Empowering women trustees to lead events and initiatives — building confident leaders.</p>
+                    </div>
+                </div>
+
+                <!-- Spiritual Events -->
+                <div class="initiative-card">
+                    <div class="card-img" style="background-image: url('https://www.djjs.org/uploads/news/im_6365e5e3a9220.jpg');"></div>
+                    <div class="card-content">
+                        <i class="fas fa-pray card-icon"></i>
+                        <h3 class="card-title">Spiritual Events</h3>
+                        <p>Shrimad Bhagwat Katha, Kirtan, Dhyana, Yagya — fostering devotion and inner peace.</p>
+                    </div>
+                </div>
+
+                <!-- Nature -->
+                <div class="initiative-card">
+                    <div class="card-img" style="background-image: url('https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYTE3OGQ1NmEwLTZhNjMtMTFlZi04OTQ0LWNmNDg1NzhjZjk4Ny5qcGc=');"></div>
+                    <div class="card-content">
+                        <i class="fas fa-tree card-icon"></i>
+                        <h3 class="card-title">Nature & Environment</h3>
+                        <p>Tree plantation, cleanliness drives, water conservation — protecting Mother Nature.</p>
+                    </div>
+                </div>
+
+                <!-- Yoga -->
+                <div class="initiative-card">
+                    <div class="card-img" style="background-image: url('https://amma.org/wp-content/uploads/2018-06-21_yogaday01-guptapada-odisha.jpg');"></div>
+                    <div class="card-content">
+                        <i class="fas fa-yin-yang card-icon"></i>
+                        <h3 class="card-title">Yoga & Wellness</h3>
+                        <p>Free yoga camps promoting physical, mental, and spiritual harmony.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Parivar -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Meet Our <span>Parivar</span></h2>
+
+            <!-- Founder -->
+            <div style="text-align:center; max-width:800px; margin:0 auto 60px;">
+                <h3 style="font-size:2.2rem; margin-bottom:20px;">Abhey Sharma – Founder</h3>
+                <p style="font-size:1.2rem; margin-bottom:20px;">
+                    A 23-year-old spiritual scholar and devotee of Shri Radha-Krishna, dedicated to Gau Sewa, Bhakti Katha, and selfless service.
+                </p>
+                <p>"I am not here to become big — I am here to serve the smallest with love."</p>
+            </div>
+
+            <!-- Trustees -->
+            <div class="trustees-grid">
+                <div class="trustee-card">
+                    <div class="trustee-img" style="background-image: url('https://via.placeholder.com/120?text=Dhruv');"></div>
+                    <h4>Dhruv Sharma</h4>
+                    <p><strong>General Secretary</strong><br>Youth leader with administrative strength.</p>
+                </div>
+                <div class="trustee-card">
+                    <div class="trustee-img" style="background-image: url('https://via.placeholder.com/120?text=Doli');"></div>
+                    <h4>Doli Devi</h4>
+                    <p><strong>Treasurer</strong><br>Aasha Worker & stitching teacher empowering girls.</p>
+                </div>
+                <div class="trustee-card">
+                    <div class="trustee-img" style="background-image: url('https://via.placeholder.com/120?text=Jyoti');"></div>
+                    <h4>Jyoti Verma</h4>
+                    <p><strong>Media Incharge</strong><br>Radiologist & renowned yoga instructor.</p>
+                </div>
+                <div class="trustee-card">
+                    <div class="trustee-img" style="background-image: url('https://via.placeholder.com/120?text=Aman');"></div>
+                    <h4>Aman Sharma</h4>
+                    <p><strong>PRO</strong><br>Photographer capturing the Trust’s journey.</p>
+                </div>
+                <div class="trustee-card">
+                    <div class="trustee-img" style="background-image: url('https://via.placeholder.com/120?text=Aakash');"></div>
+                    <h4>Aakash Gupta</h4>
+                    <p><strong>Event Incharge</strong><br>Businessman ensuring flawless events.</p>
+                </div>
+                <div class="trustee-card">
+                    <div class="trustee-img" style="background-image: url('https://via.placeholder.com/120?text=Samriti');"></div>
+                    <h4>Samriti Thakur</h4>
+                    <p><strong>Membership Incharge</strong><br>Digital expert building community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation -->
+    <section id="donate">
+        <div class="container">
+            <h2 class="section-title">Support Our <span>Seva</span></h2>
+            <div class="donate-grid">
+                <div class="qr-box">
+                    <h3>Donate via UPI</h3>
+                    <img src="YOUR_QR_CODE_URL_HERE" alt="UPI QR Code">
+                    <p style="margin-top:20px;"><strong>UPI ID:</strong> YOUR_UPI_ID</p>
+                </div>
+                <div class="bank-details">
+                    <h3>Bank Transfer</h3>
+                    <p><strong>Account:</strong> Shriji Parivar Trust<br>
+                       <strong>Bank:</strong> State Bank of India<br>
+                       <strong>A/C:</strong> YOUR_AC_NUMBER<br>
+                       <strong>IFSC:</strong> YOUR_IFSC</p>
+                    <a href="YOUR_RAZORPAY_LINK" target="_blank" class="btn">Donate Now</a>
+                </div>
+                <div class="bank-details">
+                    <h3>Join as Member</h3>
+                    <a href="YOUR_MEMBERSHIP_FORM_LINK" target="_blank" class="btn">Become a Member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>Shriji Parivar Trust</strong><br>Chail, District Solan, Himachal Pradesh</p>
+            <div class="social" style="margin:30px 0;">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2025 Shriji Parivar Trust. Jai Shri Radhe 🙏</p>
+        </div>
+    </footer>
+
+    <!-- Carousel Script -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        function show() {
+            slides.forEach((s, i) => s.classList.toggle('active', i === current));
+        }
+        show();
+        setInterval(() => {
+            current = (current + 1) % slides.length;
+            show();
+        }, 6000);
+    </script>
+
+</body>
+</html>
